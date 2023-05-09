@@ -29,11 +29,15 @@ export const Carousel = () => {
 		formData.append('title', InputTitle.current.value);
 
 		axios
-			.post('http://localhost:1212/admin/carousel', formData, {
-				headers: {
-					Authorization: token,
+			.post(
+				'https://matras-bekend.onrender.com/admin/carousel',
+				formData,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then((res) => {
 				if (res.status === 201) {
 					alert('Created');

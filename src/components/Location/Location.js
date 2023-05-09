@@ -82,11 +82,15 @@ export const Location = () => {
 		formData.append('images', imageTwo);
 		formData.append('images', imageThree);
 		axios
-			.post(`http://localhost:1212/admin/address`, formData, {
-				headers: {
-					Authorization: token,
+			.post(
+				`https://matras-bekend.onrender.com/admin/address`,
+				formData,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then(
 				(res) =>
 					res.status === 201
@@ -112,11 +116,15 @@ export const Location = () => {
 		formData.append('images', imageThree);
 		console.log(formData);
 		axios
-			.put(`http://localhost:1212/admin/address/` + editId, formData, {
-				headers: {
-					Authorization: token,
+			.put(
+				`https://matras-bekend.onrender.com/admin/address/` + editId,
+				formData,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then((res) => {
 				if (res.status === 200) {
 					window.location.reload();
@@ -127,7 +135,7 @@ export const Location = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/address', {
+			.get('https://matras-bekend.onrender.com/admin/address', {
 				headers: {
 					Authorization: token,
 				},
@@ -140,7 +148,7 @@ export const Location = () => {
 
 	const deleteFunc = (id) => {
 		axios
-			.delete(`http://localhost:1212/admin/address/${id}`, {
+			.delete(`https://matras-bekend.onrender.com/admin/address/${id}`, {
 				headers: {
 					Authorization: token,
 				},

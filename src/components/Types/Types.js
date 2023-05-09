@@ -48,7 +48,7 @@ export const Types = () => {
 
 		axios
 			.post(
-				'http://localhost:1212/admin/categories',
+				'https://matras-bekend.onrender.com/admin/categories',
 				{
 					category: inputValOne.current.value,
 					isActive: checked,
@@ -74,7 +74,7 @@ export const Types = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/categories', {
+			.get('https://matras-bekend.onrender.com/admin/categories', {
 				headers: {
 					Authorization: token,
 				},
@@ -85,11 +85,14 @@ export const Types = () => {
 
 	const deleteFunc = (id) => {
 		axios
-			.delete(`http://localhost:1212/admin/categories/${id}`, {
-				headers: {
-					Authorization: token,
+			.delete(
+				`https://matras-bekend.onrender.com/admin/categories/${id}`,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then((res) => window.location.reload())
 			.catch((err) => console.log(err));
 	};
@@ -101,7 +104,7 @@ export const Types = () => {
 
 		axios
 			.put(
-				`http://localhost:1212/admin/categories/${getId}`,
+				`https://matras-bekend.onrender.com/admin/categories/${getId}`,
 				{
 					category: inputVal?.current?.value,
 					isActive: checked,

@@ -25,7 +25,7 @@ export const Orders = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/orders/' + page, {
+			.get('https://matras-bekend.onrender.com/admin/orders/' + page, {
 				headers: {
 					Authorization: token,
 				},

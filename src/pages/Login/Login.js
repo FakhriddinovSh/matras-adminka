@@ -16,7 +16,7 @@ export const Login = () => {
 		evt.preventDefault();
 
 		axios
-			.post('http://localhost:1212/admin/login', {
+			.post('https://matras-bekend.onrender.com/admin/login', {
 				userName: 'admin',
 				password: 'admin',
 			})

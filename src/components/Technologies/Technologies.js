@@ -29,10 +29,6 @@ import { Modal } from '../TypeModal/TypeModal';
 import { AddButton } from '../Types/Types.styled';
 
 export const Technologies = () => {
-	const array = ['1', '2', '3'];
-
-	console.log(array);
-
 	const [orderModal, setOrderModal] = useState(false);
 	const [navinka, setNavinka] = useState(false);
 	const [technology, setTechnology] = useState([]);
@@ -77,7 +73,7 @@ export const Technologies = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/technology', {
+			.get('https://matras-bekend.onrender.com/admin/technology', {
 				headers: {
 					Authorization: token,
 				},
@@ -88,11 +84,14 @@ export const Technologies = () => {
 
 	const deleteTechnology = (id) => {
 		axios
-			.delete('http://localhost:1212/admin/technology/' + id, {
-				headers: {
-					Authorization: token,
+			.delete(
+				'https://matras-bekend.onrender.com/admin/technology/' + id,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err));
 	};
@@ -102,7 +101,7 @@ export const Technologies = () => {
 
 		axios
 			.put(
-				'http://localhost:1212/admin/technology/' + editId,
+				'https://matras-bekend.onrender.com/admin/technology/' + editId,
 				{
 					name: photoName.current.value,
 					thumbnail: photoLink.current.value,

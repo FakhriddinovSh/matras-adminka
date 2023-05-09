@@ -22,7 +22,7 @@ export const Customers = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/contact/' + page, {
+			.get('https://matras-bekend.onrender.com/admin/contact/' + page, {
 				headers: {
 					Authorization: token,
 				},
@@ -33,7 +33,7 @@ export const Customers = () => {
 
 	const handleDeleteContact = (id) => {
 		axios
-			.delete('http://localhost:1212/admin/contact/' + id, {
+			.delete('https://matras-bekend.onrender.com/admin/contact/' + id, {
 				headers: {
 					Authorization: token,
 				},

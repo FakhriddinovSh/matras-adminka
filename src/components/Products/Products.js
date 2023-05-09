@@ -77,7 +77,7 @@ export const Products = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:1212/admin/categories', {
+			.get('https://matras-bekend.onrender.com/admin/categories', {
 				headers: {
 					Authorization: token,
 				},
@@ -89,7 +89,7 @@ export const Products = () => {
 			.catch((err) => console.log(err));
 
 		axios
-			.get('http://localhost:1212/admin/products', {
+			.get('https://matras-bekend.onrender.com/admin/products', {
 				headers: {
 					Authorization: token,
 				},
@@ -146,7 +146,7 @@ export const Products = () => {
 
 		axios
 			.post(
-				`http://localhost:1212/admin/products/${productTypeOne.current.value}`,
+				`https://matras-bekend.onrender.com/admin/products/${productTypeOne.current.value}`,
 				formData,
 				{
 					headers: {
@@ -164,7 +164,7 @@ export const Products = () => {
 
 	const deleteProduct = (id) => {
 		axios
-			.delete(`http://localhost:1212/admin/products/` + id, {
+			.delete(`https://matras-bekend.onrender.com/admin/products/` + id, {
 				headers: {
 					Authorization: token,
 				},
@@ -199,11 +199,15 @@ export const Products = () => {
 		formData.append('new', navinla);
 
 		axios
-			.put(`http://localhost:1212/admin/products/${editId}`, formData, {
-				headers: {
-					Authorization: token,
+			.put(
+				`https://matras-bekend.onrender.com/admin/products/${editId}`,
+				formData,
+				{
+					headers: {
+						Authorization: token,
+					},
 				},
-			})
+			)
 			.then((res) => {
 				if (res.status > 199 || res.status < 210) {
 					window.location.reload();
